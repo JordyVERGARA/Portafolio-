@@ -782,6 +782,7 @@
 
 .timeline {
   display: grid;
+  list-style: none;
   gap: var(--space-xl);
   margin-left: var(--space-xs);
   padding-left: var(--space-lg);
