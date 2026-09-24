@@ -64,31 +64,41 @@ button {
 
 /* ---------- Tipografía ---------- */
 
+/* Las clases .type-h* aplican el estilo de un encabezado sin cambiar la
+   semántica (se usan en el Design System para mostrar la escala). */
 h1,
 h2,
 h3,
-h4 {
+h4,
+.type-h1,
+.type-h2,
+.type-h3,
+.type-h4 {
   font-family: var(--font-heading);
   line-height: var(--lh-tight);
   font-weight: var(--fw-bold);
   text-wrap: balance;
 }
 
-h1 {
+h1,
+.type-h1 {
   font-size: var(--fs-3xl);
   letter-spacing: -0.02em;
 }
 
-h2 {
+h2,
+.type-h2 {
   font-size: var(--fs-2xl);
   letter-spacing: -0.01em;
 }
 
-h3 {
+h3,
+.type-h3 {
   font-size: var(--fs-xl);
 }
 
-h4 {
+h4,
+.type-h4 {
   font-size: var(--fs-md);
   line-height: var(--lh-snug);
 }

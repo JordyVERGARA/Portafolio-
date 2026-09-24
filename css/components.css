@@ -385,7 +385,7 @@
     font-size: var(--fs-sm);
   }
 
-  .theme-toggle {
+  .navbar > .theme-toggle {
     order: 2;
   }
 
@@ -892,6 +892,12 @@
 
 .form__control.is-valid {
   border-color: var(--color-success);
+}
+
+.form__control:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: var(--color-surface-alt);
 }
 
 .form__hint,

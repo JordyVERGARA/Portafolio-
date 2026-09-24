@@ -30,6 +30,8 @@
   --color-error-soft: #fdeaea;
 
   --color-overlay: rgb(10 12 28 / 0.6);
+  --color-code-bg: #14162b;
+  --color-code-text: #e3e6f5;
 
   /* ---------- Tipografía ---------- */
   --font-heading: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
@@ -135,6 +137,8 @@
   --color-error-soft: #3a1717;
 
   --color-overlay: rgb(0 0 0 / 0.7);
+  --color-code-bg: #080a16;
+  --color-code-text: #e3e6f5;
 
   --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
   --shadow-card: 0 4px 14px rgb(0 0 0 / 0.35);
