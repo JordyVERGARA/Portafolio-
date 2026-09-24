@@ -94,8 +94,9 @@
 
       // Problema (sin la etiqueta "Problema:" que ya aporta el título)
       const problem = document.createElement('p');
-      problem.textContent = card.querySelector('.project-card__problem')
+      const problemText = card.querySelector('.project-card__problem')
         .textContent.replace(/^\s*Problema:\s*/, '');
+      problem.textContent = problemText.charAt(0).toUpperCase() + problemText.slice(1);
 
       title.textContent = card.querySelector('.card__title').textContent;
       body.replaceChildren(

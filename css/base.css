@@ -55,8 +55,9 @@ button {
   cursor: pointer;
 }
 
-ul[role="list"],
-ol[role="list"] {
+/* :where() deja la especificidad en 0 para que los componentes
+   puedan definir su propio padding sin pelear con el reset. */
+:where(ul, ol)[role="list"] {
   list-style: none;
   padding: 0;
 }
