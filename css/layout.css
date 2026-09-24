@@ -72,6 +72,7 @@
   background:
     radial-gradient(40rem 24rem at 85% 10%, var(--color-primary-soft), transparent 70%),
     radial-gradient(30rem 20rem at 0% 100%, var(--color-secondary-soft), transparent 70%);
+  mask-image: linear-gradient(to bottom, #000 55%, transparent);
 }
 
 .hero__inner {
