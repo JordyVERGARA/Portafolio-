@@ -17,7 +17,9 @@
   --color-background: #f6f7fb;
   --color-surface: #ffffff;
   --color-surface-alt: #eef0f7;
+  --color-section-alt: #eceff8;
   --color-border: #dde1ee;
+  --color-border-strong: #b9bfd6;
 
   --color-text: #14162b;
   --color-text-muted: #585d76;
@@ -53,6 +55,7 @@
   --lh-base: 1.65;
 
   /* ---------- Espaciado (escala base 4px) ---------- */
+  --space-3xs: 0.125rem; /* 2px  */
   --space-2xs: 0.25rem;  /* 4px  */
   --space-xs: 0.5rem;    /* 8px  */
   --space-sm: 0.75rem;   /* 12px */
@@ -65,6 +68,7 @@
 
   /* ---------- Bordes y radios ---------- */
   --border-width: 1px;
+  --border-width-accent: 3px;
   --border: var(--border-width) solid var(--color-border);
 
   --radius-sm: 0.375rem;
@@ -85,7 +89,10 @@
   --avatar-size: clamp(12rem, 10rem + 10vw, 18rem);
   --icon-size: 2.5rem;
   --icon-size-sm: 1.25rem;
+  --icon-tile: 3rem;
   --touch-target: 2.75rem;
+  --control-height-sm: 2.25rem;
+  --dot-size: 0.75rem;
 
   /* ---------- Movimiento ---------- */
   --transition-fast: 150ms ease;
@@ -115,7 +122,9 @@
   --color-background: #0e1020;
   --color-surface: #171a2e;
   --color-surface-alt: #20243f;
+  --color-section-alt: #131629;
   --color-border: #2e3354;
+  --color-border-strong: #464d78;
 
   --color-text: #eceef8;
   --color-text-muted: #a6abc6;

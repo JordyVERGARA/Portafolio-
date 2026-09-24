@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nombre Apellido | Portafolio</title>
+  <meta name="description" content="Portafolio de Nombre Apellido, estudiante de Ingeniería de Software: perfil, habilidades, proyectos y contacto.">
+  <meta name="author" content="Nombre Apellido">
+  <meta name="theme-color" content="#2f5bea">
+
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+
+  <script src="js/theme.js"></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/projects.js" defer></script>
+  <script src="js/form.js" defer></script>
+</head>
+<body>
+  <!-- Íconos reutilizables (se referencian con <use href="#i-...">) -->
+  <svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header" id="site-header">
+    <nav class="navbar container" aria-label="Navegación principal">
+      <a class="navbar__brand" href="#inicio">
+        <span class="navbar__logo" aria-hidden="true">NA</span>
+        <span class="navbar__name">Nombre Apellido</span>
+      </a>
+
+      <button class="icon-btn theme-toggle" type="button" aria-pressed="false" title="Cambiar tema" data-theme-toggle>
+        <span class="visually-hidden">Tema oscuro</span>
+        <svg class="icon theme-toggle__moon" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg>
+        <svg class="icon theme-toggle__sun" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg>
+      </button>
+
+      <button class="navbar__toggle" type="button" aria-expanded="false" aria-controls="menu-principal" data-menu-toggle>
+        <span class="visually-hidden" data-menu-label>Abrir menú</span>
+        <span class="navbar__toggle-bar" aria-hidden="true"></span>
+        <span class="navbar__toggle-bar" aria-hidden="true"></span>
+        <span class="navbar__toggle-bar" aria-hidden="true"></span>
+      </button>
+
+      <ul class="navbar__menu" id="menu-principal" role="list" data-menu>
+        <li><a class="navbar__link" href="#inicio">Inicio</a></li>
+        <li><a class="navbar__link" href="#sobre-mi">Sobre mí</a></li>
+        <li><a class="navbar__link" href="#habilidades">Habilidades</a></li>
+        <li><a class="navbar__link" href="#proyectos">Proyectos</a></li>
+        <li><a class="navbar__link" href="design-system.html">Design System</a></li>
+        <li><a class="navbar__link" href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <!-- ============ INICIO ============ -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="eyebrow">Hola, mi nombre es</p>
+          <h1 class="hero__title" id="hero-title">Nombre Apellido</h1>
+          <p class="hero__role">Estudiante de Ingeniería de Software · Desarrollo web frontend</p>
+          <p class="hero__text">
+            Me gusta convertir ideas en interfaces claras, accesibles y rápidas.
+            Actualmente estudio en la Universidad Estatal de Milagro (UNEMI) y
+            busco mi primera experiencia en prácticas preprofesionales.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#proyectos">
+              Ver proyectos
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"/></svg>
+            </a>
+            <a class="btn btn--secondary" href="#contacto">Contactar</a>
+          </div>
+        </div>
+
+        <figure class="hero__figure">
+          <img class="avatar" src="assets/img/avatar.svg" alt="Avatar ilustrado de Nombre Apellido con lentes y sudadera oscura" width="320" height="320">
+          <figcaption class="status-pill">Disponible para prácticas</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ SOBRE MÍ ============ -->
+    <section class="section" id="sobre-mi" aria-labelledby="sobre-mi-title">
+      <div class="container">
+        <header class="section-header" data-reveal>
+          <p class="eyebrow">Conóceme</p>
+          <h2 class="section-header__title" id="sobre-mi-title">Sobre mí</h2>
+        </header>
+
+        <div class="about">
+          <article class="about__bio" data-reveal>
+            <h3>Perfil profesional</h3>
+            <p>
+              Soy estudiante de Ingeniería de Software con interés en el desarrollo
+              web frontend. Disfruto maquetar interfaces con HTML semántico, darles
+              estilo con CSS moderno y añadir interactividad con JavaScript cuidando
+              siempre la accesibilidad y el rendimiento.
+            </p>
+            <p>
+              Aprendo construyendo: cada proyecto de la universidad es una
+              oportunidad para practicar buenas prácticas como el control de
+              versiones con Git, la organización del código y el diseño basado en
+              componentes reutilizables.
+            </p>
+
+            <h3>Intereses</h3>
+            <ul class="badge-list" role="list">
+              <li class="badge badge--lg">Desarrollo frontend</li>
+              <li class="badge badge--lg">Accesibilidad web</li>
+              <li class="badge badge--lg">Diseño de interfaces</li>
+              <li class="badge badge--lg">Bases de datos</li>
+              <li class="badge badge--lg">Software libre</li>
+            </ul>
+          </article>
+
+          <aside class="card card--padded about__facts" aria-labelledby="datos-title" data-reveal>
+            <h3 id="datos-title">Datos rápidos</h3>
+            <dl class="facts">
+              <div class="facts__item">
+                <dt>Ubicación</dt>
+                <dd>Ecuador</dd>
+              </div>
+              <div class="facts__item">
+                <dt>Carrera</dt>
+                <dd>Ingeniería de Software</dd>
+              </div>
+              <div class="facts__item">
+                <dt>Nivel</dt>
+                <dd>5.º semestre</dd>
+              </div>
+              <div class="facts__item">
+                <dt>Idiomas</dt>
+                <dd>Español, inglés (B1)</dd>
+              </div>
+              <div class="facts__item">
+                <dt>Modalidad</dt>
+                <dd>Presencial o remoto</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+
+        <section class="about__education" aria-labelledby="formacion-title" data-reveal>
+          <h3 id="formacion-title">Formación académica</h3>
+          <ol class="timeline" role="list">
+            <li class="timeline__item">
+              <article>
+                <h4 class="timeline__title">Ingeniería de Software</h4>
+                <p class="timeline__meta">Universidad Estatal de Milagro (UNEMI) · 2023 – actualidad</p>
+                <p>Programación, estructuras de datos, bases de datos, ingeniería de requisitos y desarrollo web.</p>
+              </article>
+            </li>
+            <li class="timeline__item">
+              <article>
+                <h4 class="timeline__title">Curso de Desarrollo Web Responsive</h4>
+                <p class="timeline__meta">Formación en línea · 2024</p>
+                <p>HTML semántico, CSS Grid, Flexbox y diseño adaptable a distintos dispositivos.</p>
+              </article>
+            </li>
+            <li class="timeline__item">
+              <article>
+                <h4 class="timeline__title">Bachillerato General Unificado</h4>
+                <p class="timeline__meta">Unidad Educativa · 2020 – 2023</p>
+                <p>Especialización en Ciencias; primer acercamiento a la programación.</p>
+              </article>
+            </li>
+          </ol>
+        </section>
+      </div>
+    </section>
+
+    <!-- ============ HABILIDADES ============ -->
+    <section class="section section--alt" id="habilidades" aria-labelledby="habilidades-title">
+      <div class="container">
+        <header class="section-header" data-reveal>
+          <p class="eyebrow">Stack técnico</p>
+          <h2 class="section-header__title" id="habilidades-title">Habilidades</h2>
+          <p class="section-header__text">
+            Tecnologías que uso y estoy aprendiendo. Los niveles son honestos y
+            siguen este criterio:
+          </p>
+        </header>
+
+        <dl class="level-legend" data-reveal>
+          <div class="level-legend__item">
+            <dt><span class="badge badge--basico">Básico</span></dt>
+            <dd>Conozco los fundamentos y lo he usado en ejercicios guiados.</dd>
+          </div>
+          <div class="level-legend__item">
+            <dt><span class="badge badge--intermedio">Intermedio</span></dt>
+            <dd>Lo he aplicado en proyectos propios y resuelvo problemas sin guía.</dd>
+          </div>
+          <div class="level-legend__item">
+            <dt><span class="badge badge--avanzado">Avanzado</span></dt>
+            <dd>Lo domino con soltura y puedo explicarlo o enseñarlo a otros.</dd>
+          </div>
+        </dl>
+
+        <div class="skills-grid">
+          <section class="skill-group" aria-labelledby="skills-frontend" data-reveal>
+            <h3 class="skill-group__title" id="skills-frontend">Frontend</h3>
+            <ul class="skill-list" role="list">
+              <li>
+                <article class="skill" data-level="intermedio">
+                  <img class="skill__icon" src="assets/icons/skills/html5.svg" alt="Logo de HTML5" width="48" height="48" loading="lazy">
+                  <div class="skill__body">
+                    <h4 class="skill__name">HTML5</h4>
+                    <p class="skill__desc">Estructura semántica, formularios y accesibilidad.</p>
+                  </div>
+                  <p class="skill__level">
+                    <span class="badge badge--intermedio">Intermedio</span>
+                    <span class="level-meter" aria-hidden="true"><span></span><span></span><span></span></span>
+                  </p>
+                </article>
+              </li>
+              <li>
+                <article class="skill" data-level="intermedio">
+                  <img class="skill__icon" src="assets/icons/skills/css3.svg" alt="Logo de CSS3" width="48" height="48" loading="lazy">
+                  <div class="skill__body">
+                    <h4 class="skill__name">CSS3</h4>
+                    <p class="skill__desc">Flexbox, Grid, variables CSS y diseño responsive.</p>
+                  </div>
+                  <p class="skill__level">
+                    <span class="badge badge--intermedio">Intermedio</span>
+                    <span class="level-meter" aria-hidden="true"><span></span><span></span><span></span></span>
+                  </p>
+                </article>
+              </li>
+              <li>
+                <article class="skill" data-level="basico">
+                  <img class="skill__icon" src="assets/icons/skills/javascript.svg" alt="Logo de JavaScript" width="48" height="48" loading="lazy">
+                  <div class="skill__body">
+                    <h4 class="skill__name">JavaScript</h4>
+                    <p class="skill__desc">Manipulación del DOM, eventos y localStorage.</p>
+                  </div>
+                  <p class="skill__level">
+                    <span class="badge badge--basico">Básico</span>
+                    <span class="level-meter" aria-hidden="true"><span></span><span></span><span></span></span>
+                  </p>
+                </article>
+              </li>
+            </ul>
+          </section>
+
+          <section class="skill-group" aria-labelledby="skills-backend" data-reveal>
+            <h3 class="skill-group__title" id="skills-backend">Backend</h3>
+            <ul class="skill-list" role="list">
+              <li>
+                <article class="skill" data-level="intermedio">
+                  <img class="skill__icon" src="assets/icons/skills/python.svg" alt="Logo de Python" width="48" height="48" loading="lazy">
+                  <div class="skill__body">
+                    <h4 class="skill__name">Python</h4>
+                    <p class="skill__desc">Programación estructurada, POO y scripts de automatización.</p>
+                  </div>
+                  <p class="skill__level">
+                    <span class="badge badge--intermedio">Intermedio</span>
+                    <span class="level-meter" aria-hidden="true"><span></span><span></span><span></span></span>
+                  </p>
+                </article>
+              </li>
+              <li>
+                <article class="skill" data-level="basico">
+                  <img class="skill__icon" src="assets/icons/skills/java.svg" alt="Logo de Java" width="48" height="48" loading="lazy">
+                  <div class="skill__body">
+                    <h4 class="skill__name">Java</h4>
+                    <p class="skill__desc">POO, colecciones y aplicaciones de escritorio sencillas.</p>
+                  </div>
+                  <p class="skill__level">
+                    <span class="badge badge--basico">Básico</span>
+                    <span class="level-meter" aria-hidden="true"><span></span><span></span><span></span></span>
+                  </p>
+                </article>
+              </li>
+              <li>
+                <article class="skill" data-level="basico">
+                  <img class="skill__icon" src="assets/icons/skills/nodejs.svg" alt="Logo de Node.js" width="48" height="48" loading="lazy">
+                  <div class="skill__body">
+                    <h4 class="skill__name">Node.js</h4>
+                    <p class="skill__desc">En aprendizaje: primeros servidores con Express.</p>
+                  </div>
+                  <p class="skill__level">
+                    <span class="badge badge--basico">Básico</span>
+                    <span class="level-meter" aria-hidden="true"><span></span><span></span><span></span></span>
+                  </p>
+                </article>
+              </li>
+            </ul>
+          </section>
+
+          <section class="skill-group" aria-labelledby="skills-db" data-reveal>
+            <h3 class="skill-group__title" id="skills-db">Bases de datos</h3>
+            <ul class="skill-list" role="list">
+              <li>
+                <article class="skill" data-level="intermedio">
+                  <img class="skill__icon" src="assets/icons/skills/mysql.svg" alt="Logo de MySQL" width="48" height="48" loading="lazy">
+                  <div class="skill__body">
+                    <h4 class="skill__name">MySQL</h4>
+                    <p class="skill__desc">Modelado relacional, consultas con JOIN y procedimientos.</p>
+                  </div>
+                  <p class="skill__level">
+                    <span class="badge badge--intermedio">Intermedio</span>
+                    <span class="level-meter" aria-hidden="true"><span></span><span></span><span></span></span>
+                  </p>
+                </article>
+              </li>
+              <li>
+                <article class="skill" data-level="basico">
+                  <img class="skill__icon" src="assets/icons/skills/postgresql.svg" alt="Logo de PostgreSQL" width="48" height="48" loading="lazy">
+                  <div class="skill__body">
+                    <h4 class="skill__name">PostgreSQL</h4>
+                    <p class="skill__desc">Consultas, vistas y restricciones de integridad.</p>
+                  </div>
+                  <p class="skill__level">
+                    <span class="badge badge--basico">Básico</span>
+                    <span class="level-meter" aria-hidden="true"><span></span><span></span><span></span></span>
+                  </p>
+                </article>
+              </li>
+            </ul>
+          </section>
+
+          <section class="skill-group" aria-labelledby="skills-tools" data-reveal>
+            <h3 class="skill-group__title" id="skills-tools">Herramientas y diseño</h3>
+            <ul class="skill-list" role="list">
+              <li>
+                <article class="skill" data-level="intermedio">
+                  <img class="skill__icon" src="assets/icons/skills/git.svg" alt="Logo de Git" width="48" height="48" loading="lazy">
+                  <div class="skill__body">
+                    <h4 class="skill__name">Git y GitHub</h4>
+                    <p class="skill__desc">Commits, ramas, pull requests y GitHub Pages.</p>
+                  </div>
+                  <p class="skill__level">
+                    <span class="badge badge--intermedio">Intermedio</span>
+                    <span class="level-meter" aria-hidden="true"><span></span><span></span><span></span></span>
+                  </p>
+                </article>
+              </li>
+              <li>
+                <article class="skill" data-level="intermedio">
+                  <img class="skill__icon" src="assets/icons/skills/vscode.svg" alt="Logo de Visual Studio Code" width="48" height="48" loading="lazy">
+                  <div class="skill__body">
+                    <h4 class="skill__name">VS Code</h4>
+                    <p class="skill__desc">Extensiones, depuración y terminal integrada.</p>
+                  </div>
+                  <p class="skill__level">
+                    <span class="badge badge--intermedio">Intermedio</span>
+                    <span class="level-meter" aria-hidden="true"><span></span><span></span><span></span></span>
+                  </p>
+                </article>
+              </li>
+              <li>
+                <article class="skill" data-level="basico">
+                  <img class="skill__icon" src="assets/icons/skills/figma.svg" alt="Logo de Figma" width="48" height="48" loading="lazy">
+                  <div class="skill__body">
+                    <h4 class="skill__name">Figma</h4>
+                    <p class="skill__desc">Wireframes y prototipos de baja fidelidad.</p>
+                  </div>
+                  <p class="skill__level">
+                    <span class="badge badge--basico">Básico</span>
+                    <span class="level-meter" aria-hidden="true"><span></span><span></span><span></span></span>
+                  </p>
+                </article>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROYECTOS ============ -->
+    <section class="section" id="proyectos" aria-labelledby="proyectos-title">
+      <div class="container">
+        <header class="section-header" data-reveal>
+          <p class="eyebrow">Portafolio</p>
+          <h2 class="section-header__title" id="proyectos-title">Proyectos destacados</h2>
+          <p class="section-header__text">
+            Proyectos académicos y personales. Filtra por tecnología o abre cada
+            uno para ver el detalle.
+          </p>
+        </header>
+
+        <div class="filter" role="group" aria-label="Filtrar proyectos por tecnología" data-filter-group>
+          <button class="chip" type="button" aria-pressed="true" data-filter="todos">Todos</button>
+          <button class="chip" type="button" aria-pressed="false" data-filter="html-css">HTML/CSS</button>
+          <button class="chip" type="button" aria-pressed="false" data-filter="javascript">JavaScript</button>
+          <button class="chip" type="button" aria-pressed="false" data-filter="python">Python</button>
+          <button class="chip" type="button" aria-pressed="false" data-filter="java">Java</button>
+          <button class="chip" type="button" aria-pressed="false" data-filter="bases-de-datos">Bases de datos</button>
+        </div>
+        <p class="filter__status" role="status" data-filter-status>Mostrando 4 proyectos</p>
+
+        <ul class="project-grid" role="list">
+          <li class="project-grid__item" data-tech="html-css javascript">
+            <article class="card project-card">
+              <figure class="card__media">
+                <img src="assets/img/projects/portafolio.svg" alt="Vista previa del portafolio: barra de navegación, presentación con avatar y tarjetas de proyectos" width="640" height="400" loading="lazy">
+              </figure>
+              <div class="card__body">
+                <h3 class="card__title">Portafolio personal</h3>
+                <p class="card__text">Sitio web responsive con tema claro/oscuro, filtro de proyectos y un Design System documentado.</p>
+                <p class="project-card__problem"><strong>Problema:</strong> no contaba con un espacio profesional para mostrar mis habilidades y proyectos a docentes y empleadores.</p>
+                <ul class="badge-list" role="list" aria-label="Tecnologías utilizadas">
+                  <li class="badge">HTML5</li>
+                  <li class="badge">CSS3</li>
+                  <li class="badge">JavaScript</li>
+                  <li class="badge">GitHub Pages</li>
+                </ul>
+              </div>
+              <footer class="card__footer">
+                <button class="btn btn--primary btn--sm" type="button" data-modal-open>
+                  <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-eye"/></svg>
+                  Ver detalles
+                </button>
+                <a class="btn btn--ghost btn--sm" href="https://github.com/tu-usuario/tu-usuario.github.io" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-code"/></svg>
+                  Código
+                </a>
+                <a class="btn btn--ghost btn--sm" href="https://tu-usuario.github.io/" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-external"/></svg>
+                  Demo
+                </a>
+              </footer>
+              <div class="project-card__details" hidden>
+                <ul>
+                  <li>Estructura con HTML5 semántico y jerarquía correcta de encabezados.</li>
+                  <li>Estilos organizados con design tokens (CSS Custom Properties).</li>
+                  <li>Tema claro/oscuro con preferencia guardada en localStorage.</li>
+                  <li>Filtro de proyectos, modal de detalle y validación de formulario.</li>
+                </ul>
+                <p>Aprendí a planificar un sistema de diseño antes de escribir estilos y a mantener el proyecto con commits frecuentes.</p>
+              </div>
+            </article>
+          </li>
+
+          <li class="project-grid__item" data-tech="python bases-de-datos">
+            <article class="card project-card">
+              <figure class="card__media">
+                <img src="assets/img/projects/biblioteca.svg" alt="Vista previa del gestor de biblioteca: menú lateral, indicadores y tabla de préstamos" width="640" height="400" loading="lazy">
+              </figure>
+              <div class="card__body">
+                <h3 class="card__title">Gestor de biblioteca</h3>
+                <p class="card__text">Aplicación para registrar libros, usuarios y préstamos, con reportes de devoluciones pendientes.</p>
+                <p class="project-card__problem"><strong>Problema:</strong> los préstamos se anotaban a mano en hojas de cálculo, lo que provocaba pérdidas y retrasos.</p>
+                <ul class="badge-list" role="list" aria-label="Tecnologías utilizadas">
+                  <li class="badge">Python</li>
+                  <li class="badge">Tkinter</li>
+                  <li class="badge">MySQL</li>
+                </ul>
+              </div>
+              <footer class="card__footer">
+                <button class="btn btn--primary btn--sm" type="button" data-modal-open>
+                  <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-eye"/></svg>
+                  Ver detalles
+                </button>
+                <a class="btn btn--ghost btn--sm" href="https://github.com/tu-usuario/gestor-biblioteca" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-code"/></svg>
+                  Código
+                </a>
+              </footer>
+              <div class="project-card__details" hidden>
+                <ul>
+                  <li>CRUD de libros, usuarios y préstamos.</li>
+                  <li>Base de datos relacional normalizada con claves foráneas.</li>
+                  <li>Alertas de préstamos vencidos y reporte exportable.</li>
+                </ul>
+                <p>Proyecto de la asignatura de Bases de Datos. Aprendí a modelar entidades y a separar la lógica de la interfaz.</p>
+              </div>
+            </article>
+          </li>
+
+          <li class="project-grid__item" data-tech="html-css javascript">
+            <article class="card project-card">
+              <figure class="card__media">
+                <img src="assets/img/projects/tareas.svg" alt="Vista previa de la lista de tareas: campo para agregar, filtros y tareas marcadas" width="640" height="400" loading="lazy">
+              </figure>
+              <div class="card__body">
+                <h3 class="card__title">Lista de tareas académicas</h3>
+                <p class="card__text">Aplicación web para organizar deberes por materia, con filtros y guardado automático.</p>
+                <p class="project-card__problem"><strong>Problema:</strong> olvidar fechas de entrega al tener tareas dispersas entre varias plataformas.</p>
+                <ul class="badge-list" role="list" aria-label="Tecnologías utilizadas">
+                  <li class="badge">HTML5</li>
+                  <li class="badge">CSS3</li>
+                  <li class="badge">JavaScript</li>
+                  <li class="badge">localStorage</li>
+                </ul>
+              </div>
+              <footer class="card__footer">
+                <button class="btn btn--primary btn--sm" type="button" data-modal-open>
+                  <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-eye"/></svg>
+                  Ver detalles
+                </button>
+                <a class="btn btn--ghost btn--sm" href="https://github.com/tu-usuario/lista-tareas" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-code"/></svg>
+                  Código
+                </a>
+                <a class="btn btn--ghost btn--sm" href="https://tu-usuario.github.io/lista-tareas/" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-external"/></svg>
+                  Demo
+                </a>
+              </footer>
+              <div class="project-card__details" hidden>
+                <ul>
+                  <li>Agregar, completar y eliminar tareas.</li>
+                  <li>Filtros por estado: todas, pendientes y completadas.</li>
+                  <li>Persistencia de datos en el navegador con localStorage.</li>
+                </ul>
+                <p>Primer proyecto con JavaScript puro. Practiqué eventos, delegación y manipulación del DOM.</p>
+              </div>
+            </article>
+          </li>
+
+          <li class="project-grid__item" data-tech="java bases-de-datos">
+            <article class="card project-card">
+              <figure class="card__media">
+                <img src="assets/img/projects/inventario.svg" alt="Vista previa del sistema de inventario: editor de código y gráfico de barras de stock" width="640" height="400" loading="lazy">
+              </figure>
+              <div class="card__body">
+                <h3 class="card__title">Sistema de inventario</h3>
+                <p class="card__text">Programa de escritorio para controlar entradas, salidas y stock mínimo de un pequeño negocio.</p>
+                <p class="project-card__problem"><strong>Problema:</strong> el negocio no sabía qué productos reponer y perdía ventas por falta de stock.</p>
+                <ul class="badge-list" role="list" aria-label="Tecnologías utilizadas">
+                  <li class="badge">Java</li>
+                  <li class="badge">Swing</li>
+                  <li class="badge">PostgreSQL</li>
+                </ul>
+              </div>
+              <footer class="card__footer">
+                <button class="btn btn--primary btn--sm" type="button" data-modal-open>
+                  <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-eye"/></svg>
+                  Ver detalles
+                </button>
+                <a class="btn btn--ghost btn--sm" href="https://github.com/tu-usuario/sistema-inventario" target="_blank" rel="noopener noreferrer">
+                  <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-code"/></svg>
+                  Código
+                </a>
+              </footer>
+              <div class="project-card__details" hidden>
+                <ul>
+                  <li>Registro de productos, proveedores y movimientos.</li>
+                  <li>Alerta cuando un producto baja del stock mínimo.</li>
+                  <li>Arquitectura en capas (modelo, vista y acceso a datos).</li>
+                </ul>
+                <p>Proyecto grupal de Programación Orientada a Objetos. Me encargué del módulo de reportes y de la conexión con la base de datos.</p>
+              </div>
+            </article>
+          </li>
+        </ul>
+
+        <p class="empty-state" hidden data-filter-empty>No hay proyectos con esa tecnología todavía.</p>
+      </div>
+    </section>
+
+    <!-- ============ CONTACTO ============ -->
+    <section class="section section--alt" id="contacto" aria-labelledby="contacto-title">
+      <div class="container">
+        <header class="section-header" data-reveal>
+          <p class="eyebrow">Hablemos</p>
+          <h2 class="section-header__title" id="contacto-title">Contacto</h2>
+          <p class="section-header__text">
+            ¿Tienes una práctica, un proyecto o una pregunta? Escríbeme y te
+            responderé lo antes posible.
+          </p>
+        </header>
+
+        <div class="contact">
+          <form class="card form" id="contact-form" action="mailto:tu.correo@ejemplo.com" method="post" enctype="text/plain" data-reveal>
+            <h3 class="form__title">Envíame un mensaje</h3>
+
+            <div class="form__row">
+              <div class="form__field">
+                <label class="form__label" for="nombre">Nombre <span class="form__required" aria-hidden="true">*</span></label>
+                <input class="form__control" id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Ej.: Ana Torres" required minlength="3" maxlength="60" aria-describedby="nombre-error">
+                <p class="form__error" id="nombre-error"></p>
+              </div>
+
+              <div class="form__field">
+                <label class="form__label" for="email">Correo electrónico <span class="form__required" aria-hidden="true">*</span></label>
+                <input class="form__control" id="email" name="email" type="email" autocomplete="email" placeholder="nombre@correo.com" required aria-describedby="email-error">
+                <p class="form__error" id="email-error"></p>
+              </div>
+            </div>
+
+            <div class="form__field">
+              <label class="form__label" for="motivo">Motivo <span class="form__required" aria-hidden="true">*</span></label>
+              <select class="form__control" id="motivo" name="motivo" required aria-describedby="motivo-error">
+                <option value="">Selecciona una opción</option>
+                <option value="Prácticas preprofesionales">Prácticas preprofesionales</option>
+                <option value="Proyecto o colaboración">Proyecto o colaboración</option>
+                <option value="Consulta académica">Consulta académica</option>
+                <option value="Otro">Otro</option>
+              </select>
+              <p class="form__error" id="motivo-error"></p>
+            </div>
+
+            <div class="form__field">
+              <label class="form__label" for="mensaje">Mensaje <span class="form__required" aria-hidden="true">*</span></label>
+              <textarea class="form__control form__control--textarea" id="mensaje" name="mensaje" rows="5" placeholder="Cuéntame en qué puedo ayudarte…" required minlength="20" maxlength="500" aria-describedby="mensaje-hint mensaje-error"></textarea>
+              <p class="form__hint" id="mensaje-hint"><span data-char-count>0</span>/500 caracteres · mínimo 20</p>
+              <p class="form__error" id="mensaje-error"></p>
+            </div>
+
+            <div class="form__footer">
+              <p class="form__note"><span aria-hidden="true">*</span> Campos obligatorios</p>
+              <button class="btn btn--primary" type="submit">
+                Enviar mensaje
+                <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-send"/></svg>
+              </button>
+            </div>
+
+            <p class="alert" role="status" hidden data-form-status></p>
+          </form>
+
+          <aside class="contact__aside" aria-labelledby="canales-title" data-reveal>
+            <h3 id="canales-title">Otros canales</h3>
+            <address class="contact__address">
+              <ul class="contact-list" role="list">
+                <li>
+                  <a class="contact-link" href="mailto:tu.correo@ejemplo.com">
+                    <span class="contact-link__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg></span>
+                    <span>
+                      <span class="contact-link__label">Correo</span>
+                      <span class="contact-link__value">tu.correo@ejemplo.com</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a class="contact-link" href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer">
+                    <span class="contact-link__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-github"/></svg></span>
+                    <span>
+                      <span class="contact-link__label">GitHub</span>
+                      <span class="contact-link__value">github.com/tu-usuario</span>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a class="contact-link" href="https://www.linkedin.com/in/tu-usuario" target="_blank" rel="noopener noreferrer">
+                    <span class="contact-link__icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-linkedin"/></svg></span>
+                    <span>
+                      <span class="contact-link__label">LinkedIn</span>
+                      <span class="contact-link__value">linkedin.com/in/tu-usuario</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </address>
+            <p class="text-muted">Suelo responder en un plazo de 24 a 48 horas.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>&copy; <span data-year>2026</span> Nombre Apellido. Hecho con HTML, CSS y JavaScript.</p>
+      <nav aria-label="Enlaces del pie de página">
+        <ul class="site-footer__links" role="list">
+          <li><a href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/tu-usuario" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="design-system.html">Design System</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <a class="icon-btn back-to-top" href="#top" aria-label="Volver al inicio" data-back-to-top>
+    <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up"/></svg>
+  </a>
+
+  <!-- Modal reutilizable para el detalle de proyectos (lo rellena projects.js) -->
+  <dialog class="modal" id="project-modal" aria-labelledby="modal-title">
+    <div class="modal__header">
+      <div>
+        <p class="eyebrow">Detalle del proyecto</p>
+        <h2 class="modal__title" id="modal-title">Proyecto</h2>
+      </div>
+      <button class="icon-btn" type="button" aria-label="Cerrar" data-modal-close>
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-close"/></svg>
+      </button>
+    </div>
+    <div class="modal__body" data-modal-body></div>
+    <div class="modal__footer" data-modal-links></div>
+  </dialog>
+</body>
+</html>
