@@ -1,10 +1,6 @@
-/* ==========================================================================
-   COMPONENTES
-   Piezas reutilizables del sitio. Se documentan en design-system.html.
-   Nomenclatura BEM: .bloque, .bloque__elemento, .bloque--modificador
-   ========================================================================== */
 
-/* ---------- Íconos ---------- */
+
+
 
 .icon-sprite {
   position: absolute;
@@ -24,7 +20,7 @@
   stroke-linejoin: round;
 }
 
-/* ---------- Eyebrow (texto sobre los títulos) ---------- */
+
 
 .eyebrow {
   display: inline-flex;
@@ -45,7 +41,7 @@
   background-color: currentColor;
 }
 
-/* ---------- Encabezado de sección ---------- */
+
 
 .section-header {
   display: grid;
@@ -59,7 +55,7 @@
   color: var(--color-text-muted);
 }
 
-/* ---------- Botones ---------- */
+
 
 .btn {
   display: inline-flex;
@@ -140,7 +136,7 @@
   box-shadow: none;
 }
 
-/* ---------- Botón de ícono ---------- */
+
 
 .icon-btn {
   display: inline-grid;
@@ -164,7 +160,7 @@
   color: var(--color-primary);
 }
 
-/* ---------- Toggle de tema ---------- */
+
 
 .theme-toggle__sun,
 :root[data-theme="dark"] .theme-toggle__moon {
@@ -183,7 +179,7 @@
   transition: transform var(--transition-base);
 }
 
-/* ---------- Volver arriba ---------- */
+
 
 .back-to-top {
   position: fixed;
@@ -222,7 +218,7 @@
   }
 }
 
-/* ---------- Navbar ---------- */
+
 
 .navbar {
   display: flex;
@@ -294,7 +290,7 @@
   display: none;
 }
 
-/* Con JavaScript activo, el menú móvil se vuelve desplegable. */
+
 .js .navbar__toggle {
   display: inline-grid;
   place-content: center;
@@ -394,7 +390,7 @@
   }
 }
 
-/* ---------- Chips (filtros) ---------- */
+
 
 .chip {
   min-height: var(--control-height-sm);
@@ -434,7 +430,7 @@
   color: var(--color-text-muted);
 }
 
-/* ---------- Badges ---------- */
+
 
 .badge-list {
   display: flex;
@@ -477,7 +473,7 @@
   color: var(--color-secondary);
 }
 
-/* ---------- Status pill ---------- */
+
 
 .status-pill {
   display: inline-flex;
@@ -512,7 +508,7 @@
   }
 }
 
-/* ---------- Avatar ---------- */
+
 
 .avatar {
   width: var(--avatar-size);
@@ -523,7 +519,7 @@
   box-shadow: var(--shadow-lg);
 }
 
-/* ---------- Card ---------- */
+
 
 .card {
   background-color: var(--color-surface);
@@ -574,7 +570,7 @@
   padding: 0 var(--space-lg) var(--space-lg);
 }
 
-/* ---------- Card de proyecto ---------- */
+
 
 .project-card {
   display: flex;
@@ -629,7 +625,7 @@
   color: var(--color-text-muted);
 }
 
-/* ---------- Skill ---------- */
+
 
 .skill-group {
   display: grid;
@@ -745,7 +741,7 @@
   }
 }
 
-/* ---------- Datos rápidos (lista de definición) ---------- */
+
 
 .about__facts {
   display: grid;
@@ -778,7 +774,7 @@
   text-align: right;
 }
 
-/* ---------- Timeline ---------- */
+
 
 .timeline {
   display: grid;
@@ -820,7 +816,7 @@
   color: var(--color-text-muted);
 }
 
-/* ---------- Formulario ---------- */
+
 
 .form {
   display: grid;
@@ -935,7 +931,7 @@
   }
 }
 
-/* ---------- Alertas ---------- */
+
 
 .alert {
   padding: var(--space-sm) var(--space-md);
@@ -955,7 +951,7 @@
   color: var(--color-error);
 }
 
-/* ---------- Enlaces de contacto ---------- */
+
 
 .contact__address {
   font-style: normal;
@@ -1008,7 +1004,7 @@
   overflow-wrap: anywhere;
 }
 
-/* ---------- Modal ---------- */
+
 
 .modal {
   width: min(100% - 2 * var(--space-md), 44rem);
@@ -1089,7 +1085,7 @@
   border-top: var(--border);
 }
 
-/* ---------- Animación de aparición (scroll reveal) ---------- */
+
 
 .js [data-reveal] {
   opacity: 0;

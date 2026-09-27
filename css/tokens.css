@@ -1,11 +1,7 @@
-/* ==========================================================================
-   DESIGN TOKENS
-   Todas las decisiones visuales del proyecto viven aquí. Los componentes
-   solo consumen estas variables; nunca valores sueltos.
-   ========================================================================== */
+
 
 :root {
-  /* ---------- Colores (tema claro) ---------- */
+
   --color-primary: #2f5bea;
   --color-primary-hover: #2449c4;
   --color-primary-soft: #e6ecfd;
@@ -33,7 +29,7 @@
   --color-code-bg: #14162b;
   --color-code-text: #e3e6f5;
 
-  /* ---------- Tipografía ---------- */
+
   --font-heading: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
   --font-body: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
   --font-mono: ui-monospace, "Cascadia Code", Consolas, "Courier New", monospace;
@@ -56,19 +52,19 @@
   --lh-snug: 1.35;
   --lh-base: 1.65;
 
-  /* ---------- Espaciado (escala base 4px) ---------- */
-  --space-3xs: 0.125rem; /* 2px  */
-  --space-2xs: 0.25rem;  /* 4px  */
-  --space-xs: 0.5rem;    /* 8px  */
-  --space-sm: 0.75rem;   /* 12px */
-  --space-md: 1rem;      /* 16px */
-  --space-lg: 1.5rem;    /* 24px */
-  --space-xl: 2rem;      /* 32px */
-  --space-2xl: 3rem;     /* 48px */
-  --space-3xl: 4rem;     /* 64px */
-  --space-4xl: 6rem;     /* 96px */
 
-  /* ---------- Bordes y radios ---------- */
+  --space-3xs: 0.125rem;
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+
+
   --border-width: 1px;
   --border-width-accent: 3px;
   --border: var(--border-width) solid var(--color-border);
@@ -78,13 +74,13 @@
   --radius-lg: 1.25rem;
   --radius-full: 999px;
 
-  /* ---------- Sombras ---------- */
+
   --shadow-sm: 0 1px 2px rgb(20 22 43 / 0.06);
   --shadow-card: 0 4px 14px rgb(20 22 43 / 0.08);
   --shadow-lg: 0 16px 40px rgb(20 22 43 / 0.16);
   --focus-ring: 0 0 0 3px rgb(47 91 234 / 0.35);
 
-  /* ---------- Tamaños ---------- */
+
   --container-max: 72rem;
   --container-narrow: 48rem;
   --header-height: 4.5rem;
@@ -96,12 +92,12 @@
   --control-height-sm: 2.25rem;
   --dot-size: 0.75rem;
 
-  /* ---------- Movimiento ---------- */
+
   --transition-fast: 150ms ease;
   --transition-base: 250ms ease;
   --transition-slow: 600ms cubic-bezier(0.2, 0.7, 0.2, 1);
 
-  /* ---------- Capas ---------- */
+
   --z-header: 100;
   --z-floating: 200;
   --z-modal: 1000;
@@ -109,30 +105,28 @@
   color-scheme: light;
 }
 
-/* ---------- Tema oscuro ----------
-   Se activa con [data-theme="dark"] (elegido por el usuario y guardado en
-   localStorage) o, si no hay elección, según la preferencia del sistema. */
+
 :root[data-theme="dark"] {
-  --color-primary: #8ea8ff;
-  --color-primary-hover: #b0c2ff;
-  --color-primary-soft: #1f2a55;
-  --color-on-primary: #0e1020;
+  --color-primary: #18d6b3;
+  --color-primary-hover: #39e3c2;
+  --color-primary-soft: #103b42;
+  --color-on-primary: #04151d;
 
-  --color-secondary: #ff9466;
-  --color-secondary-soft: #3a2218;
+  --color-secondary: #55d8c2;
+  --color-secondary-soft: #10343b;
 
-  --color-background: #0e1020;
-  --color-surface: #171a2e;
-  --color-surface-alt: #20243f;
-  --color-section-alt: #131629;
-  --color-border: #2e3354;
-  --color-border-strong: #464d78;
+  --color-background: #061521;
+  --color-surface: #0b1e2c;
+  --color-surface-alt: #102a39;
+  --color-section-alt: #081b28;
+  --color-border: #173b4b;
+  --color-border-strong: #286477;
 
-  --color-text: #eceef8;
-  --color-text-muted: #a6abc6;
+  --color-text: #eff6ff;
+  --color-text-muted: #a9c7e8;
 
-  --color-success: #4ade80;
-  --color-success-soft: #13301f;
+  --color-success: #18d6b3;
+  --color-success-soft: #103b42;
   --color-error: #ff8a80;
   --color-error-soft: #3a1717;
 
@@ -143,7 +137,7 @@
   --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
   --shadow-card: 0 4px 14px rgb(0 0 0 / 0.35);
   --shadow-lg: 0 16px 40px rgb(0 0 0 / 0.5);
-  --focus-ring: 0 0 0 3px rgb(142 168 255 / 0.45);
+  --focus-ring: 0 0 0 3px rgb(24 214 179 / 0.4);
 
   color-scheme: dark;
 }

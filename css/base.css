@@ -1,7 +1,4 @@
-/* ==========================================================================
-   BASE
-   Reset mínimo, tipografía global y utilidades.
-   ========================================================================== */
+
 
 *,
 *::before,
@@ -55,17 +52,15 @@ button {
   cursor: pointer;
 }
 
-/* :where() deja la especificidad en 0 para que los componentes
-   puedan definir su propio padding sin pelear con el reset. */
+
 :where(ul, ol)[role="list"] {
   list-style: none;
   padding: 0;
 }
 
-/* ---------- Tipografía ---------- */
 
-/* Las clases .type-h* aplican el estilo de un encabezado sin cambiar la
-   semántica (se usan en el Design System para mostrar la escala). */
+
+
 h1,
 h2,
 h3,
@@ -135,7 +130,7 @@ code {
   color: var(--color-text-muted);
 }
 
-/* ---------- Foco visible y accesibilidad ---------- */
+
 
 :focus-visible {
   outline: 2px solid var(--color-primary);

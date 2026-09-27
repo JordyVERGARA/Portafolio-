@@ -1,13 +1,4 @@
-/* ==========================================================================
-   LAYOUT
-   Regiones de la página y grillas. Enfoque mobile-first:
-   los estilos base son para teléfono y se amplían con min-width.
 
-   Breakpoints
-     40rem  (640px)  teléfonos grandes
-     48rem  (768px)  tablets
-     62rem  (992px)  laptops / escritorio
-   ========================================================================== */
 
 .container {
   width: min(100% - 2 * var(--space-md), var(--container-max));
@@ -20,7 +11,7 @@
   }
 }
 
-/* ---------- Header ---------- */
+
 
 .site-header {
   position: sticky;
@@ -38,7 +29,7 @@
   box-shadow: var(--shadow-sm);
 }
 
-/* ---------- Secciones ---------- */
+
 
 .section {
   padding-block: var(--space-3xl);
@@ -55,7 +46,7 @@
   }
 }
 
-/* ---------- Hero ---------- */
+
 
 .hero {
   position: relative;
@@ -133,7 +124,7 @@
   }
 }
 
-/* ---------- Sobre mí ---------- */
+
 
 .about {
   display: grid;
@@ -167,7 +158,7 @@
   }
 }
 
-/* ---------- Habilidades ---------- */
+
 
 .skills-grid {
   display: grid;
@@ -181,7 +172,7 @@
   }
 }
 
-/* ---------- Proyectos ---------- */
+
 
 .project-grid {
   display: grid;
@@ -198,7 +189,7 @@
   }
 }
 
-/* ---------- Contacto ---------- */
+
 
 .contact {
   display: grid;
@@ -217,7 +208,7 @@
   }
 }
 
-/* ---------- Footer ---------- */
+
 
 .site-footer {
   padding-block: var(--space-xl);

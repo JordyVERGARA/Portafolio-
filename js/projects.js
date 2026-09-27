@@ -1,17 +1,8 @@
-/**
- * Proyectos:
- *  1. Filtro por tecnología (botones .chip con aria-pressed)
- *  2. Modal con el detalle del proyecto (<dialog> nativo)
- *
- * El contenido del modal se toma de la propia card, así la información
- * existe una sola vez en el HTML y no se duplica en JavaScript.
- */
+
 (function () {
   'use strict';
 
-  /* ------------------------------------------------------------------
-     1. Filtro por tecnología
-     ------------------------------------------------------------------ */
+
   function initFilter() {
     const group = document.querySelector('[data-filter-group]');
     if (!group) return;
@@ -42,7 +33,7 @@
 
         if (matches) {
           visibleCount += 1;
-          void item.offsetWidth; // Reinicia la animación de entrada.
+          void item.offsetWidth;
           item.classList.add('is-entering');
         }
       });
@@ -61,9 +52,7 @@
     });
   }
 
-  /* ------------------------------------------------------------------
-     2. Modal de detalle
-     ------------------------------------------------------------------ */
+
   function initModal() {
     const modal = document.getElementById('project-modal');
     if (!modal || typeof modal.showModal !== 'function') return;
@@ -85,14 +74,12 @@
     function fillModal(card) {
       const details = card.querySelector('.project-card__details');
 
-      // Imagen
       const figure = document.createElement('figure');
       const image = card.querySelector('.card__media img').cloneNode();
       figure.className = 'modal__media';
       image.removeAttribute('loading');
       figure.append(image);
 
-      // Problema (sin la etiqueta "Problema:" que ya aporta el título)
       const problem = document.createElement('p');
       const problemText = card.querySelector('.project-card__problem')
         .textContent.replace(/^\s*Problema:\s*/, '');
@@ -108,7 +95,6 @@
         createSection('Aprendizajes', details.querySelector('p').cloneNode(true))
       );
 
-      // Enlaces al repositorio / demo, con estilo de botón secundario
       const cardLinks = Array.from(card.querySelectorAll('.card__footer a')).map(function (link) {
         const clone = link.cloneNode(true);
         clone.classList.replace('btn--ghost', 'btn--secondary');
@@ -137,16 +123,14 @@
       button.addEventListener('click', function () { modal.close(); });
     });
 
-    // Clic en el fondo oscuro (fuera del cuadro) cierra el modal.
     modal.addEventListener('click', function (event) {
-      if (event.target !== modal) return; // Clic dentro del contenido.
+      if (event.target !== modal) return;
       const rect = modal.getBoundingClientRect();
       const outside = event.clientX < rect.left || event.clientX > rect.right ||
         event.clientY < rect.top || event.clientY > rect.bottom;
       if (outside) modal.close();
     });
 
-    // Se ejecuta al cerrar por botón, fondo o tecla Escape.
     modal.addEventListener('close', function () {
       document.body.classList.remove('is-locked');
       if (lastTrigger) lastTrigger.focus();

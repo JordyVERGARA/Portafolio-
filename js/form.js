@@ -1,19 +1,10 @@
-/**
- * Validación del formulario de contacto
- * - Mensajes de error claros junto a cada campo (enlazados con aria-describedby).
- * - Valida al salir del campo y corrige en vivo mientras el usuario escribe.
- * - Contador de caracteres para el mensaje.
- * - GitHub Pages no tiene servidor: al ser válido, abre el cliente de correo
- *   del usuario con el mensaje ya redactado (mailto).
- */
+
 (function () {
   'use strict';
 
   const form = document.getElementById('contact-form');
   if (!form) return;
 
-  // Sin JavaScript se usa la validación nativa del navegador;
-  // con JavaScript la reemplazamos por mensajes personalizados.
   form.noValidate = true;
 
   const fields = Array.from(form.querySelectorAll('.form__control'));
@@ -27,7 +18,6 @@
   const NAME_PATTERN = /^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ' -]+$/;
   const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-  // Cada regla devuelve un mensaje de error o '' si el valor es válido.
   const rules = {
     nombre: function (value) {
       if (!value) return 'Ingresa tu nombre.';
@@ -85,12 +75,10 @@
   }
 
   fields.forEach(function (field) {
-    // Validar al salir del campo, solo si el usuario ya escribió algo.
     field.addEventListener('blur', function () {
       if (field.value.trim() !== '') validateField(field);
     });
 
-    // Una vez marcado (error o válido), actualizar en vivo.
     const liveEvent = field.tagName === 'SELECT' ? 'change' : 'input';
     field.addEventListener(liveEvent, function () {
       if (field.hasAttribute('aria-invalid')) validateField(field);
@@ -116,9 +104,10 @@
     const subject = '[Portafolio] ' + data.get('motivo') + ' - ' + name;
     const body = data.get('mensaje').trim() + '\n\n' + name + '\n' + data.get('email').trim();
 
-    showStatus('¡Gracias, ' + name + '! Se abrirá tu aplicación de correo con el mensaje listo para enviar.', 'success');
-    window.location.href = 'mailto:' + recipient +
-      '?subject=' + encodeURIComponent(subject) +
+    showStatus('Gmail abrirá el mensaje listo. Pulsa Enviar allí para hacérmelo llegar.', 'success');
+    window.location.href = 'https://mail.google.com/mail/?view=cm&fs=1' +
+      '&to=' + encodeURIComponent(recipient) +
+      '&su=' + encodeURIComponent(subject) +
       '&body=' + encodeURIComponent(body);
 
     form.reset();

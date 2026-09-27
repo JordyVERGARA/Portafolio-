@@ -1,17 +1,11 @@
-/**
- * Design System:
- *  1. Muestra el valor real de cada color según el tema activo
- *     (leído de las CSS Custom Properties con getComputedStyle).
- *  2. Copia el valor de un color al portapapeles al hacer clic.
- *  3. Chips de demostración con estado activo.
- */
+
 (function () {
   'use strict';
 
   const swatchValues = document.querySelectorAll('.swatch__value[data-token]');
   const copyStatus = document.querySelector('[data-copy-status]');
 
-  /* 1. Valores de color sincronizados con el tema */
+
   function updateSwatchValues() {
     const styles = getComputedStyle(document.documentElement);
     swatchValues.forEach(function (button) {
@@ -23,7 +17,7 @@
   updateSwatchValues();
   document.addEventListener('themechange', updateSwatchValues);
 
-  /* 2. Copiar al portapapeles */
+
   function announce(text) {
     if (!copyStatus) return;
     copyStatus.textContent = text;
@@ -46,7 +40,7 @@
     });
   });
 
-  /* 3. Chips de demostración */
+
   document.querySelectorAll('[data-demo-chips]').forEach(function (group) {
     group.addEventListener('click', function (event) {
       const chip = event.target.closest('.chip');
