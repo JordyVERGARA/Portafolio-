@@ -4,7 +4,7 @@ Portafolio web individual desarrollado con **HTML5 semántico, CSS propio y Java
 
 - **GitHub:** [JordyVERGARA](https://github.com/JordyVERGARA)
 - **Repositorio:** [github.com/JordyVERGARA/Portafolio-](https://github.com/JordyVERGARA/Portafolio-)
-- **Sitio publicado:** pendiente de configurar en GitHub Pages.
+- **Sitio publicado:** [jordyvergara.github.io/Portafolio-/](https://jordyvergara.github.io/Portafolio-/).
 
 Las capturas actuales de `docs/capturas/` pertenecen a una versión anterior y deben actualizarse antes de entregar el proyecto.
 
@@ -24,7 +24,7 @@ Las capturas actuales de `docs/capturas/` pertenecen a una versión anterior y d
 - **HTML5 semántico:** `header`, `nav`, `main`, `section`, `article`, `aside`, `figure`, `figcaption`, `address`, `dialog`, `footer`.
 - **CSS3:** Custom Properties (design tokens), Flexbox, CSS Grid, media queries, `clamp()`, `color-mix()`, nomenclatura BEM.
 - **JavaScript (ES6+):** sin librerías, organizado por responsabilidad.
-- **Git** para control de versiones. El remoto público y GitHub Pages aún están pendientes de configurar.
+- **Git** para control de versiones. El proyecto está publicado en el repositorio público de GitHub y en GitHub Pages.
 - Recursos externos: fuentes [Inter y Space Grotesk](https://fonts.google.com/) (Google Fonts) e íconos de tecnologías de [Devicon](https://devicon.dev/) (licencia MIT, copiados localmente).
 
 ## Funcionalidades interactivas
@@ -96,10 +96,8 @@ Luego abre `http://localhost:8000` en el navegador.
 
 ## Publicación en GitHub Pages
 
-1. Sube el proyecto a un repositorio **público** en GitHub.
-2. En el repositorio: **Settings → Pages**.
-3. En **Build and deployment**, elige **Deploy from a branch**, rama `main` y carpeta `/ (root)`.
-4. Espera un par de minutos y abre la URL que muestra GitHub.
+El sitio se publica desde la rama `main` y la carpeta `/ (root)` del repositorio.
+Visítalo en [jordyvergara.github.io/Portafolio-/](https://jordyvergara.github.io/Portafolio-/).
 
 ## Buenas prácticas aplicadas
 
