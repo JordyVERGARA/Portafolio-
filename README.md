@@ -3,7 +3,7 @@
 Portafolio web individual desarrollado con **HTML5 semántico, CSS propio y JavaScript puro** (sin frameworks). Presenta mi perfil profesional, habilidades, proyectos destacados y un **Design System** que documenta los tokens visuales y los componentes reutilizables del sitio.
 
 - **GitHub:** [JordyVERGARA](https://github.com/JordyVERGARA)
-- **Repositorio del portafolio:** pendiente de crear o conectar; este checkout aún no tiene un remoto Git.
+- **Repositorio:** [github.com/JordyVERGARA/Portafolio-](https://github.com/JordyVERGARA/Portafolio-)
 - **Sitio publicado:** pendiente de configurar en GitHub Pages.
 
 Las capturas actuales de `docs/capturas/` pertenecen a una versión anterior y deben actualizarse antes de entregar el proyecto.
@@ -79,13 +79,20 @@ El tema oscuro solo redefine los tokens de color bajo `:root[data-theme="dark"]`
 
 ## Cómo visualizarlo
 
+**Clonar el repositorio:**
+
+```bash
+git clone https://github.com/JordyVERGARA/Portafolio-.git
+cd Portafolio-
+```
+
 **Servidor local recomendado:** desde la carpeta del proyecto, ejecuta:
 
 ```bash
 python -m http.server 8000
 ```
 
-Luego abre `http://localhost:8000` en el navegador. Cuando se configure el repositorio remoto, agrega aquí el comando `git clone` con su URL real.
+Luego abre `http://localhost:8000` en el navegador.
 
 ## Publicación en GitHub Pages
 
