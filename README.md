@@ -6,7 +6,7 @@ Portafolio web individual desarrollado con **HTML5 semántico, CSS propio y Java
 - **Repositorio:** [github.com/JordyVERGARA/Portafolio-](https://github.com/JordyVERGARA/Portafolio-)
 - **Sitio publicado:** [jordyvergara.github.io/Portafolio-/](https://jordyvergara.github.io/Portafolio-/).
 
-Las capturas actuales de `docs/capturas/` pertenecen a una versión anterior y deben actualizarse antes de entregar el proyecto.
+Las capturas actualizadas del portafolio se encuentran en `docs/capturas/`.
 
 ## Secciones
 
@@ -74,7 +74,7 @@ El tema oscuro solo redefine los tokens de color bajo `:root[data-theme="dark"]`
 ├── assets/
 │   ├── icons/              # Favicon e íconos de tecnologías (SVG)
 │   └── img/                # Avatar e imágenes de proyectos (SVG)
-└── docs/capturas/          # Capturas usadas en este README
+└── docs/capturas/          # Capturas actuales del portafolio
 ```
 
 ## Cómo visualizarlo
